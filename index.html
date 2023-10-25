@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animations</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    body,
+    .canvas-animations {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: none;
+
+    }
+
+    .canvas-animations {
+        background-color: black;
+        height: 500px;
+        width: 500px;
+        perspective: 900px;
+
+    }
+
+    .cute {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        animation-name: spin;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .P {
+        color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background: rgba(0, 0, 255, 0.4);
+        position: absolute;
+        border: 2px solid red;
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(50px); 
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(50px);
+    }
+    .back {
+        transform: rotateX(0deg) translateZ(50px); 
+    }
+    .front {
+        transform: rotateX(0deg) translateZ(-50px); 
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotateY(0deg);
+        }
+
+        25% {
+            transform: rotateY(45deg);
+        }
+
+        50% {
+            transform: rotateX(0deg);
+        }
+        75% {transform: rotateX(45deg);
+
+        }
+        100% {
+            transform: rotateY(180deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="canvas-animations">
+        <div class="cute">
+            <div class="P top">TOP</div>
+            <div class="P bottom">BOTTOM</div>
+            <div class="P right">RIGHT</div>
+            <div class="P left">LEFTT</div>
+            <div class="P front">FRONT</div>
+            <div class="P back">BACK</div>
+        </div>
+    </div>
+</body>
+
+</html>
